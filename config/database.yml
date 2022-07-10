@@ -1,18 +1,16 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
+  host: <%= ENV['POSTGRES_HOST'] %>
   username: <%= ENV['POSTGRES_USER'] %>
-  password: <%= ENV['LOCAL_POSTGRES_PASSWORD'] %>
-  pool: 5
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   database: jj_follow_development
 
-
 test:
   <<: *default
   database: jj_follow_test
   
-
