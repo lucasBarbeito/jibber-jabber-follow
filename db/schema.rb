@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_07_200628) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_11_020750) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "follows", force: :cascade do |t|
-    t.string "follower_id"
+    t.string "follower_user_id"
     t.string "followed_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
