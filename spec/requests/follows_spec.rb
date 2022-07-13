@@ -5,7 +5,7 @@ RSpec.describe 'follows', type: :request do
   path '/' do
 
     get('list follows') do
-      response(200, 'successful') do
+      response(401, 'successful') do
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -24,7 +24,7 @@ RSpec.describe 'follows', type: :request do
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
     post('toggle follow') do
-      response(200, 'successful') do
+      response(401, 'successful') do
         let(:id) { '123' }
 
         after do |example|
@@ -39,7 +39,7 @@ RSpec.describe 'follows', type: :request do
     end
 
     get('show follow') do
-      response(200, 'successful') do
+      response(401, 'successful') do
         let(:id) { '123' }
 
         after do |example|
