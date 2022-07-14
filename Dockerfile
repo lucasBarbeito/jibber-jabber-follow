@@ -20,4 +20,5 @@ COPY . /followers/
 
 ENTRYPOINT []
 
-EXPOSE 8082
+#RUN rm -f tmp/pids/server.pid && rails db:create db:migrate && rails s -p 8082 -b '0.0.0.0'
+#EXPOSE 8082
