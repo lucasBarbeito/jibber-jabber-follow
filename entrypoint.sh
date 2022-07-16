@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ba
 set -e
 
 # Remove a potentially pre-existing server.pid for Rails.
