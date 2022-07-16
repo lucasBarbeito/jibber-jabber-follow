@@ -18,7 +18,8 @@ RUN bundle install
 
 COPY . /followers/
 
-ENTRYPOINT []
+RUN chmod +x /usr/bin/entrypoint.sh
 
-#RUN rm -f tmp/pids/server.pid && rails db:create db:migrate && rails s -p 8082 -b '0.0.0.0'
-#EXPOSE 8082
+ENTRYPOINT ["entrypoint.sh"]
+
+CMD ["rails", "server", "-p", "8080", "-b", "0.0.0.0"]
