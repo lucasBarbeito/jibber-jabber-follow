@@ -2,7 +2,7 @@
 set -e
 
 # Remove a potentially pre-existing server.pid for Rails.
-rm -f /jibber-jabber-follow/tmp/pids/server.pid
+rm -f /followers/tmp/pids/server.pid
 
 rails db:create
 
