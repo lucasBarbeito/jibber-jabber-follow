@@ -9,7 +9,7 @@ RUN apk add --update --no-cache --virtual run-dependencies \
 		tzdata \
 		libpq \
 		&& rm -rf /var/cache/apk/*
-		
+
 WORKDIR /followers
 
 COPY Gemfile Gemfile.lock /followers/ 
